@@ -37,6 +37,7 @@
 
     function _setBase (element) {
       var height = element.offsetHeight,
+          marginTop = parseInt(document.defaultView.getComputedStyle(element, '').getPropertyValue('margin-top')),
           current, old;
 
       if( _dynamicBase ) {
@@ -73,7 +74,7 @@
        * adjacent element down far enough to get back onto the baseline.
        */
 
-      element.style.marginBottom = _base - (height % _base) + 'px';
+      element.style.marginBottom = _base - ((height + marginTop) % _base) + 'px';
     }
 
     /**
@@ -139,10 +140,8 @@
        * initialise the functionality on the single element.
        */
 
-      if (len > 1) {
+      if (len > 0) {
         while (len--) { _init(targets[len]); }
-      } else {
-        _init(targets[0]);
       }
     };
 

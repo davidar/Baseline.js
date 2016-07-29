@@ -36,7 +36,7 @@
      */
 
     function _setBase (element) {
-      var height = element.offsetHeight,
+      var height = element.getBoundingClientRect().height, /* Fractional pixels. */
           marginTop = parseInt(document.defaultView.getComputedStyle(element, '').getPropertyValue('margin-top')),
           current, old;
 
@@ -72,9 +72,15 @@
       /**
        * We set the element's margin-bottom style to a number that pushes the
        * adjacent element down far enough to get back onto the baseline.
+       * If the discrepancy is small enough, we slightly adjust margin-top instead.
        */
 
-      element.style.marginBottom = _base - ((height + marginTop) % _base) + 'px';
+      var overflow = (height + marginTop) % _base;
+      if(overflow > 2) {
+        element.style.marginBottom = (_base  - overflow) + 'px';
+      } else if(overflow > 0) {
+        element.style.marginTop = (marginTop - overflow) + 'px';
+      }
     }
 
     /**

@@ -158,8 +158,7 @@
         return baseline(this, options);
       }
     });
-  } else {
-    window.baseline = baseline;
   }
+  window.baseline = baseline;
 
 }(window, window.jQuery || window.Zepto || undefined));

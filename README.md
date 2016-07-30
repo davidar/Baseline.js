@@ -63,4 +63,4 @@ The vanilla JS version was initially created by the rocking [Ben Howdle](https:/
 
 ## License
 
-Baseline.js is licensed under the [WTFPL license.](http://sam.zoy.org/wtfpl/)
+Baseline.js is licensed under the [CC0](http://creativecommons.org/publicdomain/zero/1.0/).

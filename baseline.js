@@ -2,8 +2,8 @@
 * Baseline.js 1.1
 *
 * Copyright 2013, Daniel Eden http://daneden.me
-* Released under the WTFPL license
-* http://sam.zoy.org/wtfpl/
+* Released under the CC0
+* https://creativecommons.org/publicdomain/zero/1.0/
 *
 * Date: 2014-06-20
 */
